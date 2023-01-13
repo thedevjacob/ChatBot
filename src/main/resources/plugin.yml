@@ -1,0 +1,12 @@
+name: ChatBot
+version: 2.0.0
+main: com.tastydumplings.ChatBot
+api-version: 1.19
+
+commands:
+  cbr:
+    description: reloads the plugin config
+    usage: /cbr
+    aliases: [chatbotreload]
+    permission: ChatBot.reload
+    permission-message: You don't have permission to reload the plugin. Please try again later.

@@ -1,0 +1,36 @@
+ChatBot_Config:
+########################################################################################################################
+#                                            CHATBOT CONFIGURATION                                                     #
+# can_remind_in_sequence - true: reminder can be sent even if another reminder was sent for another category recently  #
+# name - must be the exact category name (ex: resource_pack)                                                           #
+# delay_after - delay after player's message is sent to do reminder in ticks (0 for instant)                           #
+# delay_between - delay between reminders in ticks (per category unless can_remind_in_sequence is false) (0 for none)  #
+# response - reminder message (ex: response: 'You can't fly.' would output "TIP: You can't fly.")                      #
+# keys - are keywords that must be sent IN ADDITION to whatever words are marked to be WITH_KEYS.                      #
+# ANY word in a WITH_KEYS category must also contain a KEY word to send a response.                                    #
+# ANY words in a WITHOUT_KEYS category doesn't require a KEY to send a response.                                       #
+# Made by jacob - add me on discord at jacob#9967 for questions                                                        #
+########################################################################################################################
+
+  can_remind_in_sequence: true
+
+types:
+  ## Everything under the resource pack category will have the same response below.
+  resource_pack:
+    name: resource_pack
+    delay_after: 20
+    delay_between: 6000
+    response: 'If the resource pack or textures are loading incorrectly, please try reconnecting to the server.'
+    keys:
+     - 'broke'
+     - 'weird'
+     - 'work'
+     - 'load'
+     - 'error'
+    ## Messages sent with these words must contain a key word to qualify a response (ex: "resource pack broken" signifies a response)
+    with_keys:
+      - 'resource pack'
+      - 'resourcepack'
+    ## Messages with these words will automatically be marked for a response  (ex: "texture pack" signifies a response)
+    without_keys:
+      - 'texture'
