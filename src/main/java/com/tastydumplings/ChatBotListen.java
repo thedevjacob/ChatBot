@@ -50,12 +50,10 @@ public class ChatBotListen implements Listener {
         e.getPlayer().sendMessage("Configuration Names: " + configurationNames + " and list of types: " + categories);
 
         for (String configuration : getMyConfig().getConfigurationSection("types").getKeys(false)) {
-            e.getPlayer().sendMessage("Configuration: " + configuration + " and list of types: " + categories);
             if (!configurationNames.contains(configuration)) {
                 // Load texture pack config
                 addConfigurationName(configuration);
                 addCategory(new ConfigurationLoad(getStringD("types."+configuration+".name"), getIntD("types."+configuration+".delay_after"), getIntD("types."+configuration+".delay_between"), getStringD("types."+configuration+".response"), getStringListD("types."+configuration+".keys"), getStringListD("types."+configuration+".with_keys"), getStringListD("types."+configuration+".without_keys")));
-                e.getPlayer().sendMessage("Configuration: " + configuration + " and list of types: " + categories);
             }
         }
 
